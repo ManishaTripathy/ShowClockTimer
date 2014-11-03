@@ -17,5 +17,5 @@ Basic Git Setup
   * git push origin master - Pushes all the changes to the master branch of the remote git repo.
 
 * For basic reference please check the below tutorials tutorial - 
-  * (http://rogerdudler.github.io/git-guide/)
-  * (https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config)
+  * http://rogerdudler.github.io/git-guide/
+  * https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config
