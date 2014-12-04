@@ -14,7 +14,11 @@
 	<%= render :partial => "loadEvents" %>
 </div>
 <br>
+
+<% if defined?(@current_user) %>
 <%= link_to 'Edit User Info', edit_user_path(@current_user) , :class =>"btn btn-default btn-sm"%>
+<% end %>
+
 <%= link_to 'View/Edit Radio Show Lists', radio_shows_viewEdit_path , :class =>"btn btn-default btn-sm"%>
 
 

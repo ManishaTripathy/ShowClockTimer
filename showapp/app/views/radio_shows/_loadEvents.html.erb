@@ -7,7 +7,11 @@
 	<% end%>
 <% end%>
 <%  @radio_show = @radio_show.sort_by {|e| [e[1],e[2],e[3]]} %>
+
+<% if defined?(@current_user.timeServer) %>
 <% Time.zone = @current_user.timeServer; %>
+<% end%>
+
 <%  time = Time.zone.now %>
 <%  cur_time = Time.at(time.hour * 60 * 60 + time.min * 60 + time.sec)%>
 
