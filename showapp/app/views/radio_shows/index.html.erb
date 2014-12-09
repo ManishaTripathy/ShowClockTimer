@@ -1,0 +1,31 @@
+
+ 
+<div class="panel panel-default"> 
+                    <!-- <div class="panel-heading">  -->
+<h1>                                WELCOME  TO RADIO SHOWS                         </h1>
+<!-- </div> --> 
+<div class="panel-body">
+ 	
+<div class="clock" style="font:40px bold" text-align="center">
+	<%= render plain: @date %>
+</div>
+<br>
+<div class="events" >
+	<%= render :partial => "loadEvents" %>
+</div>
+<br>
+<%= link_to 'Edit User Info', edit_user_path(@current_user) , :class =>"btn btn-default btn-sm"%>
+<%= link_to 'View/Edit Radio Show Lists', radio_shows_viewEdit_path , :class =>"btn btn-default btn-sm"%>
+
+
+</div> 
+</div>
+
+<style>
+.panel{
+    background: rgba(255,255, 255, 0.7);
+    /*box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;*/
+}
+
+</style>
+

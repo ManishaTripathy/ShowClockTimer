@@ -1,0 +1,15 @@
+<div class="nested-fields well">
+	<div class="field">
+    		<%= f.label :day %><br>
+    		<%= f.select :day, ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] %>
+  	</div>
+	<div class="field">
+    		<%= f.label :startTime %><br>
+    		<%= f.time_select :startTime %>
+  	</div>
+	<div class="field">
+    		<%= f.label :endTime %><br>
+    		<%= f.time_select :endTime %>
+  	</div>
+	<%= link_to_remove_association "Remove Show Timing", f %>
+</div>

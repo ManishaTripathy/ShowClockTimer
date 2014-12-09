@@ -1,0 +1,54 @@
+<div class="panel panel-default">
+                    <!-- <div class="panel-heading">
+                        <h3 class="panel-title text-center">Please Register</h3>
+                    </div> -->
+                    <div class="panel-body">
+
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @radio_show.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @radio_show.description %>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Show Day</th>
+      <th>Show Start Time</th>
+      <th>Show End Time</th>
+      <th></th>
+    </tr>
+  </thead>
+
+<div id="txt" style="font:40px bold "></div>
+  <tbody>
+<%@radio_show.show_timings.each do |show_timing|%>
+      <tr>
+        <td><%= show_timing.day %></td>
+        <td><%= show_timing.startTime %></td>
+        <td><%= show_timing.endTime %></td>
+      </tr>
+<%end%>
+</tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_radio_show_path(@radio_show) %> |
+<%=  link_to 'Destroy', @radio_show, method: :delete, data: { confirm: 'Are you sure?' }  %>
+</div>
+</div>
+<style>
+.panel {
+    background: rgba(255,255, 255, 0.6);
+    box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
+   width: 600px;
+
+}
+</style>
