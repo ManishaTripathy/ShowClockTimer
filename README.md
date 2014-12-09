@@ -16,6 +16,6 @@ Basic Git Setup
   * git commit -m "Message" - Commits the changes.
   * git push origin master - Pushes all the changes to the master branch of the remote git repo.
 
-* For basic reference please check the below tutorials tutorial - 
+* For basic reference please check the below tutorials - 
   * http://rogerdudler.github.io/git-guide/
   * https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config
