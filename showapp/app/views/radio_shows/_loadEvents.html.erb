@@ -40,9 +40,17 @@
 		<% time_remaining_hours = ((end_time-cur_time)/3600).to_i%>
 		<% time_remaining_minutes = ((end_time-cur_time-time_remaining_hours*3600)/60).to_i%>
 		<% time_remaining_seconds = ((end_time-cur_time)%60).to_i%>
+		<% if ((start_time-cur_time) <= @current_user.flashTime)  %>
 		
-		<li id =current> <%= link_to show[0].name+" [[ "+time_remaining_hours.to_s+" HOURS "+time_remaining_minutes.to_s+" MINUTES "+time_remaining_seconds.to_s+" SECONDS LEFT ]]", show[0] %></li>
+        <<!-- div id="flash">blink</div> -->
+        
+       		<li id = upcoming_soon><%= link_to show[0].name+" [[ UP IN "+time_remaining_hours.to_s + " HOURS " + time_remaining_minutes.to_s + " MINUTES " + time_remaining_seconds.to_s + " SECONDS ]]", show[0] %></li>
+ 	   <% else%>
+			<li id =current><%= link_to show[0].name+" [[ "+time_remaining_hours.to_s+" HOURS "+time_remaining_minutes.to_s+" MINUTES "+time_remaining_seconds.to_s+" SECONDS LEFT ]]", show[0] %></li>
 	
+	   <% end %>
+	
+		
 	<%end%>
 <% end%>
 	<% if found_current == false%>
@@ -62,9 +70,7 @@
 		<% time_remaining_seconds = ((start_time-cur_time)%60).to_i%>
 		<% @event_count = @event_count + 1 %>
 
-    <% if ((start_time-cur_time) <= @current_user.flashTime)  %>
-        <li id = upcoming_soon><%= link_to show[0].name+" [[ UP IN "+time_remaining_hours.to_s + " HOURS " + time_remaining_minutes.to_s + " MINUTES " + time_remaining_seconds.to_s + " SECONDS ]]", show[0] %></li>
-    <% elsif @event_count == 1%>
+    <% if @event_count == 1%>
         <li id = upcoming><%= link_to show[0].name+" [[ UP IN "+time_remaining_hours.to_s + " HOURS " + time_remaining_minutes.to_s + " MINUTES " + time_remaining_seconds.to_s + " SECONDS ]]", show[0] %></li>
     <% else %>
         <li id = upcoming><%= link_to show[0].name, show[0] %></li>
