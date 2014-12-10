@@ -1,4 +1,8 @@
 <div class="nested-fields well">
+  <div class="field">
+        <%= f.label :segment_name %><br>
+        <%= f.text_field :segment_name, :size => "25" %>
+    </div>
 	<div class="field">
     		<%= f.label :day %><br>
     		<%= f.select :day, ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] %>

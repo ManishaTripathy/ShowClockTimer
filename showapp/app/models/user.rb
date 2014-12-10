@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   EMAIL_REGEX = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i
   validates :userName, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
   validates :emailAddress, :presence => true, :uniqueness => true, :format => EMAIL_REGEX
-  validates :password, :confirmation => true #password_confirmation attr
+  validates :password, :presence => true, :confirmation => true #password_confirmation attr
   validates_length_of :password, :in => 6..20, :on => :create 
   def self.authenticate(username_or_email="", login_password="")
   if EMAIL_REGEX.match(username_or_email)

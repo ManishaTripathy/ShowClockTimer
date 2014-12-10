@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141207012542) do
 
   create_table "show_timings", force: true do |t|
     t.integer  "radio_show_id"
+    t.string   "segment_name"
     t.string   "day"
     t.time     "startTime"
     t.time     "endTime"

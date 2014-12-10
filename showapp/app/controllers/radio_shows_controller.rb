@@ -130,6 +130,6 @@ class RadioShowsController < ApplicationController
     def radio_show_params
       #params.require(:radio_show).permit(:user_id, :name, :description)
       params.require(:radio_show).permit(:user_id, :name, :description, 
-  show_timings_attributes: [:day, :startTime, :endTime, :_destroy, :id])
+  show_timings_attributes: [:day, :segment_name, :startTime, :endTime, :_destroy, :id])
     end
 end
