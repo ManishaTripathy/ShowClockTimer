@@ -9,11 +9,11 @@
   	</div>
 	<div class="field">
     		<%= f.label :startTime %><br>
-    		<%= f.time_select :startTime %>
+        <%= f.time_select :startTime, :include_seconds => true %>
   	</div>
 	<div class="field">
     		<%= f.label :endTime %><br>
-    		<%= f.time_select :endTime %>
+        <%= f.time_select :endTime, :include_seconds => true %>
   	</div>
 	<%= link_to_remove_association "Remove Show Timing", f %>
 </div>

@@ -17,9 +17,10 @@
   <strong>Description:</strong>
   <%= @radio_show.description %>
 </p>
-<table>
-  <thead>
+<table class="table table-striped">
+  <thead class="table table-striped">
     <tr>
+      <th>Segment Name</th>
       <th>Show Day</th>
       <th>Show Start Time</th>
       <th>Show End Time</th>
@@ -28,10 +29,11 @@
   </thead>
 
 <div id="txt" style="font:40px bold "></div>
-<tbody>
+<tbody class="table table-striped">
 <%@radio_show.show_timings.each do |show_timing|%>
-      <tr>
-    <td><%= show_timing.day %></td>
+    <tr>
+        <td><%= show_timing.segment_name %>
+        <td><%= show_timing.day %></td>
         <td><%= show_timing.startTime.strftime("%r"); %></td>
         <td><%= show_timing.endTime.strftime("%r"); %></td>
       </tr>
@@ -48,7 +50,7 @@
 .panel{
     background: rgba(255,255, 255, 0.7);
     box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
-    width:500px;
+    width:700px;
     
     
 }

@@ -23,16 +23,17 @@
   	<table class="table table-stripped">
   	<thead class="table table-stripped">
     <tr>
+      <td><strong>Segment Name</strong></td>  
       <td><strong>Show Day</strong></td>
       <td><strong>Show Start Time</></td>
       <td><strong>Show End Time</></td>
-     
     </tr>
   </thead>
 
   <tbody class="table table-stripped">
 <%radio_show.show_timings.each do |show_timing|%>
-      <tr>
+    <tr>
+       <td><%= show_timing.segment_name %></td>
        <td><%= show_timing.day %></td>
         <td><%= show_timing.startTime.strftime("%r") %></td>
         <td><%= show_timing.endTime.strftime("%r") %></td>
