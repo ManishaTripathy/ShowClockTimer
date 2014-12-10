@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 		session[:user_id] = authorized_user.id
 		#flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.userName}"
 		#redirect_to(:action => 'home')
-		if (authorized_user.userName == "admin")
+		if (authorized_user.userName === "admin")
 			redirect_to :controller=>'users', :action => 'index';	
 		else
 			redirect_to :controller=>'radio_shows', :action => 'index';

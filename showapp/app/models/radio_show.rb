@@ -39,7 +39,7 @@ has_many :show_timings, dependent: :destroy
       end
     end
     show_timings.permutation(2).select{|a, b|
-    if ( (b.startTime >= a.startTime) && (b.startTime <= a.endTime) )
+    if ( (b.day == a.day) && (b.startTime >= a.startTime) &&  (b.startTime <= a.endTime) )
    errors.add(:Show, " Timings Overlap in Submitted Info!!!! ");
     end
     }
