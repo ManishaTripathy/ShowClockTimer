@@ -40,7 +40,7 @@
 		<% time_remaining_hours = ((end_time-cur_time)/3600).to_i%>
 		<% time_remaining_minutes = ((end_time-cur_time-time_remaining_hours*3600)/60).to_i%>
 		<% time_remaining_seconds = ((end_time-cur_time)%60).to_i%>
-		<% if ((start_time-cur_time) <= @current_user.flashTime)  %>
+		<% if ((end_time-cur_time) <= @current_user.flashTime)  %>
 		
         <<!-- div id="flash">blink</div> -->
         

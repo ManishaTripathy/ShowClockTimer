@@ -46,7 +46,7 @@
 
 
 <div class="showEventName" id="showEventName" style="font:25px bold" text-align="center" hidden=true>
-	<select  class="form-control"  id="showName" onchange= "loadShowForName()"  >
+	<select  class="form-control"  id="showName" onchange= "loadShowForName()" >
 	<option value="Select" selected="selected">Select Name</option>
 	<% @radio_shows.each do |radio_show| %>
 	<option value="<%= radio_show.id%>" ><%= radio_show.name%></option>
@@ -71,7 +71,7 @@
 .panel {
     background: rgba(255,255, 255, 0.6);
     box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
-   width: 600px;
+   width: 700px;
 
 }
 </style>

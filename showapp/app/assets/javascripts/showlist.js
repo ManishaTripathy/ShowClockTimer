@@ -16,9 +16,11 @@ function loadShowEvent()
 
 function loadShowForName() 
 {
+	
 	if ($('#showName').val() != "Select")
 	{
 		var showToBeLoaded = "/radio_shows/showList/" + $('#showName').val();
+		
 		$('.showsForName').load(showToBeLoaded);
 	}
 	else
@@ -32,13 +34,26 @@ function loadShowForDay()
 	if ($('#showDay').val() != "Select")
 	{
 		var showToBeLoaded = "/radio_shows/showList/" + $('#showDay').val();
+	
 		$('.showsForDay').load(showToBeLoaded);
+		
 	}
 	else
 	{
 		$('.showsForDay').empty();
 	}
 }	
+
+// function blink() {
+   // var f = document.getElementById('current');
+   // setInterval(function() {
+      // f.style.display = (f.style.display == 'none' ? '' : 'none');
+   // }, 500);
+// }
+
+
+
+
 
 
 $(window).load(function() {

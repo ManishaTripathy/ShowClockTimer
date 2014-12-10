@@ -20,16 +20,30 @@
                 <%= link_to "HOME", root_url %> 
                  </li>
                  
-                 <li >
+                 <!-- <li >
                  <%= link_to " Logout", :controller=> "sessions", :action=> "logout" %>
                   </li>
              
             <li class="active">
             	<p class="navbar-text" align="left">Hi <%= @current_user.userName %>,  </p>
-            	</li>
+            	</li> -->
         </ul>
         </div>
-        
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" role="form">
+            
+                 <%= link_to " Logout", :controller=> "sessions", :action=> "logout" %>
+                  
+            	
+            	
+                <div class="form-group">
+                	<p class="navbar-text" align="right">Hi <%= @current_user.userName %>,  </p>
+                    <!-- <input id="myText" name="q" autocomplete="off" type="text" placeholder="TRENDS" class="form-control"> -->
+                </div>                <!-- <button type="submit" class="btn btn-success">SEARCH</button> -->
+            <!--<button type="submit" class="btn btn-success" onclick="displayresult();">SEARCH</button>-->
+            </form>
+            
+          </div>
         </div>
         
         </div>
@@ -40,5 +54,8 @@
 <%= yield %>
 
 </div>
+<style>
+
+</style>
 </body>
 </html>
