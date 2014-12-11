@@ -49,9 +49,26 @@ margin-bottom: .1em;
 {
   
 list-style-type: none;
-//background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(102,178,255,0.8)), color-stop(0%,rgba(255,255,255,0.2)));
+background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(0,128,125,0.8)), color-stop(0%,rgba(255,255,255,0.2)));
 box-shadow: rgba(0, 0, 0, 0.0) 10px 10px 10px;
 // background-color: #191970;
+color: white;
+border: .2em solid rgb(0,128,125);
+border-radius: 20px;
+font-weight: 500;
+font-size: 20px;
+text-align: center;
+padding: .3em;
+margin-bottom: .1em;
+
+}
+#navlist4 li
+{
+  
+list-style-type: none;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(102,178,255,0.8)), color-stop(0%,rgba(255,255,255,0.2)));
+box-shadow: rgba(0, 0, 0, 0.0) 10px 10px 10px;
+ background-color: #191970;
 color: white;
 border: .2em solid rgb(102,178,255);
 border-radius: 20px;
@@ -62,42 +79,41 @@ padding: .3em;
 margin-bottom: .1em;
 
 }
-// #navlist4 li
+
+// #curlist li
 // {
-//   
 // list-style-type: none;
-// //background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(0,128,125,0.8)), color-stop(0%,rgba(255,255,255,0.2)));
+// //ackground-color: #191970;
+// background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(37,92,150,0.8)), color-stop(0%,rgba(143,178,220,0.2)));
+// 
 // box-shadow: rgba(0, 0, 0, 0.0) 10px 10px 10px;
-// // background-color: #191970;
 // color: white;
-// //border: .2em solid rgb(102,178,255);
+// height: 40px;
 // border-radius: 20px;
+// border: .2em solid rgb(37,93,150);
 // font-weight: 500;
 // font-size: 20px;
 // text-align: center;
 // padding: .3em;
 // margin-bottom: .1em;
-// 
 // }
-
 #curlist li
 {
+  
 list-style-type: none;
-background-color: #191970;
 background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(37,92,150,0.8)), color-stop(0%,rgba(143,178,220,0.2)));
-
-//box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
+box-shadow: rgba(0, 0, 0, 0.0) 10px 10px 10px;
+// background-color: #191970;
 color: white;
-height: 40px;
+border: .2em solid rgb(0,128,125);
 border-radius: 20px;
-border: .2em solid rgb(37,93,150);
 font-weight: 500;
-font-size: 25px;
+font-size: 20px;
 text-align: center;
 padding: .3em;
 margin-bottom: .1em;
-}
 
+}
 
 #current a
 {
@@ -144,7 +160,7 @@ animation: blink 1s steps(2, start) infinite;
       -webkit-animation: blink 1s steps(2, start) infinite;
 text-decoration: none;
 display: block;
-font-size: 20px;
+font-size: 25px;
 //box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
 }
 

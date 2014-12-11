@@ -11,12 +11,12 @@
 <!-- <p>Hi <%= @current_user.userName %>,  </p> -->
 
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="navbar navbar-default" style="background-color:#c8c8c8" role="navigation">
      
 <div class="container" id="container1">
 	<div class="navbar-header">
             <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
                 <%= link_to "HOME", root_url %> 
                  </li>
                  
@@ -31,15 +31,17 @@
         </div>
         <div class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" role="form">
-            
+            	
+               
                  <%= link_to " Logout", :controller=> "sessions", :action=> "logout" %>
                   
             	
             	
                 <div class="form-group">
-                	<p class="navbar-text" align="right">Hi <%= @current_user.userName %>,  </p>
+                	<a class="navbar-text" align="right">Hi <%= @current_user.userName %>,  </a>
                     <!-- <input id="myText" name="q" autocomplete="off" type="text" placeholder="TRENDS" class="form-control"> -->
-                </div>                <!-- <button type="submit" class="btn btn-success">SEARCH</button> -->
+                </div>                
+                <!-- <button type="submit" class="btn btn-success">SEARCH</button> -->
             <!--<button type="submit" class="btn btn-success" onclick="displayresult();">SEARCH</button>-->
             </form>
             
