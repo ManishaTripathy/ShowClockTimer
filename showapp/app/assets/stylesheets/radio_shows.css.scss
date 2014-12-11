@@ -30,30 +30,69 @@ height: 10em;
 {
   
 list-style-type: none;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(150,150,150,1)), color-stop(90%,rgba(255,255,255,0.2)));
-// box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(150,150,150,0.8)), color-stop(0%,rgba(255,255,255,0.2)));
+box-shadow: rgba(0, 0, 0, 0.0) 10px 10px 10px;
 // background-color: #191970;
 color: #daa520;
-border: .2em solid #808080;
-font-weight: 600;
+height: 30.5px;
+border: .2em solid rgb(150,150,150);
+border-radius: 20px;
+font-weight: 500;
+font-size: 20px;
 text-align: center;
 padding: .3em;
 margin-bottom: .1em;
 
 }
 
+#navlist3 li
+{
+  
+list-style-type: none;
+//background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(102,178,255,0.8)), color-stop(0%,rgba(255,255,255,0.2)));
+box-shadow: rgba(0, 0, 0, 0.0) 10px 10px 10px;
+// background-color: #191970;
+color: white;
+border: .2em solid rgb(102,178,255);
+border-radius: 20px;
+font-weight: 500;
+font-size: 20px;
+text-align: center;
+padding: .3em;
+margin-bottom: .1em;
+
+}
+// #navlist4 li
+// {
+//   
+// list-style-type: none;
+// //background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(0,128,125,0.8)), color-stop(0%,rgba(255,255,255,0.2)));
+// box-shadow: rgba(0, 0, 0, 0.0) 10px 10px 10px;
+// // background-color: #191970;
+// color: white;
+// //border: .2em solid rgb(102,178,255);
+// border-radius: 20px;
+// font-weight: 500;
+// font-size: 20px;
+// text-align: center;
+// padding: .3em;
+// margin-bottom: .1em;
+// 
+// }
+
 #curlist li
 {
 list-style-type: none;
 background-color: #191970;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(37,93,117,0.7)), color-stop(90%,rgba(143,178,220,0.2)));
+background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(37,92,150,0.8)), color-stop(0%,rgba(143,178,220,0.2)));
 
 //box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
-color: #daa520;
+color: white;
 height: 40px;
-border: .2em solid #808080;
-font-weight: 700;
-font-size: 20px;
+border-radius: 20px;
+border: .2em solid rgb(37,93,150);
+font-weight: 500;
+font-size: 25px;
 text-align: center;
 padding: .3em;
 margin-bottom: .1em;
@@ -70,18 +109,33 @@ display: block;
 
 #current a:hover
 {
-background-color:orange;
+background-color:rgb(37,92,150);
 color: #191970;
+
+}
+#upcoming_next a
+{
+color: white;
+text-decoration: none;
+font-size: 20px;
+// background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(37,92,220,0.7)), color-stop(0%,rgba(143,178,0,0.2)));
+//border-radius: 20px;
+//font-weight: 500;
+
+display: block;
 
 }
 #upcoming a
 {
 color: white;
 text-decoration: none;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(127,0,255,0.7)), color-stop(90%,rgba(143,178,220,0.2)));
+font-size: 20px;
+//background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(37,92,220,0.7)), color-stop(0%,rgba(143,178,0,0.2)));
+//border-radius: 20px;
+//font-weight: 500;
 
 display: block;
-//box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
+
 }
 #upcoming_soon a
 {
@@ -90,6 +144,7 @@ animation: blink 1s steps(2, start) infinite;
       -webkit-animation: blink 1s steps(2, start) infinite;
 text-decoration: none;
 display: block;
+font-size: 20px;
 //box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
 }
 
@@ -105,16 +160,23 @@ display: block;
     }
 #upcoming a:hover
 {
-// background-color: orange;
-background-color:orange;
-color: #191970;
+ background-color: rgb(102,178,255);
+
+color: blue;
+//box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
+}
+#upcoming_next a:hover
+{
+ background-color: rgb(102,178,255);
+
+color: blue;
 //box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
 }
 #upcoming_soon a:hover
 {
 // background-color: orange;
-background-color:orange;
-color: #191970;
+//background-color:orange;
+color: blue;
 //box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
 }
 #elapsed a
@@ -127,10 +189,33 @@ display: block;
 
 #elapsed a:hover
 {
-background-color: orange;
-color: #191970;
+background-color:rgba(150,150,150,0.8);
+color: blue;
+}
+.left{
+
+  width: 125px;
+  text-align: center;
+  margin: 2px 10px;
+  display: inline
+
 }
 
+.centre{
+  
+float: left;
+  text-align: left;
+  margin: 2px 10px;
+  display: inline
+}
 
+.right{
+  
+   float: right;
+  text-align: left;
+  margin: 2px 10px;
+  display: inline
+  
+}
 
 
