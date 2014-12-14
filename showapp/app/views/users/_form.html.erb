@@ -25,8 +25,9 @@
   </div>
   <div class="field">
     <%= f.label :timeServer %><br>
-    <%= f.text_field :timeServer , :size =>"40" %>
+    <%= f.select :timeServer, ["Pacific Time (US & Canada)", "Mountain Time (US & Canada)", "Eastern Time (US & Canada)", "Central Time (US & Canada)"] %>
   </div>
+  <% if @user.nil? %>
   <div class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password  , :size =>"40"%>
@@ -35,6 +36,16 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation, :size =>"40"%>
   </div>
+  <% else%>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, :value => @user.password, :size => "40" %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation, :value => @user.password, :size => "40" %>
+  </div>
+  <% end%>
   <div class="field">
     <%= f.label :location %><br>
     <%= f.text_field :location , :size =>"40" %>

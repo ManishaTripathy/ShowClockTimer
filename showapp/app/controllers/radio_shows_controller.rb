@@ -6,6 +6,10 @@ class RadioShowsController < ApplicationController
   # GET /radio_shows.json
   def index
     #@radio_shows = RadioShow.all;
+    if (@current_user.userName == "admin")
+ 	redirect_to :controller=>'users', :action => 'index'; 
+    end
+
     @date = formatAMPM();
     weekday = Time.now.strftime("%A");
     radio_shows_list = (RadioShow.all.where("user_id" => @current_user.id).includes(:show_timings).where('show_timings.day' => weekday)).uniq;
@@ -40,7 +44,10 @@ class RadioShowsController < ApplicationController
   end
 
   def formatAMPM()
-    date= Time.now; 
+    #date= Time.now;
+    #Time.zone = "Central Time (US & Canada)";
+    Time.zone = @current_user.timeServer;
+    date = Time.zone.now;
     #date = date.strftime("%B %d, %Y %H:no implicit conversion of Fixnum into S%M:%S")
     weekday = ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     day = date.strftime("%A");

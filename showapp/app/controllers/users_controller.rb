@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :match_password]
-  before_filter :save_login_state, :only => [:new, :create]
+  #before_filter :save_login_state, :only => [:create]
+  before_filter :authenticate_user, :only => [:index, :show, :update, :destroy, :new]
   # GET /users
   # GET /users.json
   def index
@@ -30,7 +31,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
 	session[:user_id] = @user.id
-	format.html {redirect_to :controller=>'radio_shows', :action => 'index'};
+        if (@user.userName == "admin")
+		format.html {redirect_to :controller=>'users', :action => 'index', notice: 'User was successfully created.' };	
+	else
+		format.html {redirect_to :controller=>'radio_shows', :action => 'index', notice: 'User was successfully created.' };	
+	end
         #format.html { redirect_to @user, notice: 'User was successfully created.' }
         #format.json { render :show, status: :created, location: @user }
       else
@@ -46,7 +51,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         #format.html { redirect_to @user, notice: 'User was successfully updated.' }
-	format.html {redirect_to :controller=>'radio_shows', :action => 'index'};
+	if (@current_user.userName == "admin")
+		format.html {redirect_to :controller=>'users', :action => 'index'};	
+	else
+		format.html {redirect_to :controller=>'radio_shows', :action => 'index'};
+	end
         #format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -60,7 +69,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html {redirect_to :controller=>'users', :action => 'index', notice: 'User was successfully destroyed.'};
       format.json { head :no_content }
     end
   end
