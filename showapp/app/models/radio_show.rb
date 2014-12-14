@@ -17,7 +17,7 @@ has_many :show_timings, dependent: :destroy
   # end of any existing show is between start/end of new show
   @radio_shows_list2 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where('show_timings.day' => show_timing.day, 'show_timings.endTime' => (show_timing.startTime+1)..(show_timing.endTime) )).uniq;
   # start and end is oany existing show includes start/end of new show
-  @radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( "show_timings.startTime <= ? and show_timings.endTime >= ?",show_timing.startTime, show_timing.endTime)).uniq;
+  @radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( "'show_timings'.'startTime' <= ? and 'show_timings'.'endTime'" >= ?",show_timing.startTime, show_timing.endTime)).uniq;
 
       if (!@radio_shows_list1.empty?)
     @radio_shows_list1.each do |radio_show|

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :match_password]
   #before_filter :save_login_state, :only => [:create]
-  before_filter :authenticate_user, :only => [:index, :show, :update, :destroy, :new]
+  before_filter :authenticate_user, :only => [:index, :show, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
