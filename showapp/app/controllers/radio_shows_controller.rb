@@ -11,7 +11,8 @@ class RadioShowsController < ApplicationController
     end
 
     @date = formatAMPM();
-    weekday = Time.now.strftime("%A");
+    Time.zone = @current_user.timeServer;
+    weekday = Time.zone.now.strftime("%A");
     radio_shows_list = (RadioShow.all.where("user_id" => @current_user.id).includes(:show_timings).where('show_timings.day' => weekday)).uniq;
     @radio_shows = radio_shows_list;
   end
@@ -68,7 +69,8 @@ class RadioShowsController < ApplicationController
 
   
   def loadEvents
-     weekday = Time.now.strftime("%A");
+     Time.zone = @current_user.timeServer;
+     weekday = Time.zone.now.strftime("%A");
      radio_shows_list = (RadioShow.all.where("user_id" => @current_user.id).includes(:show_timings).where('show_timings.day' => weekday)).uniq;
      @radio_shows = radio_shows_list;
     render :partial => "loadEvents"
