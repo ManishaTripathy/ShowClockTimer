@@ -52,7 +52,7 @@
 		
         <!-- div id="flash">blink</div> -->
         
-       		<li id = upcoming_soon><div class="col-md-4"></div><div class="col-md-4"><%= link_to show[0].name+" - "+show[7] , show[0] %></div> <div class="col-md-4"><%= sprintf('%02d',(time_remaining_hours)) + ":" + sprintf('%02d',(time_remaining_minutes)) + ":" + sprintf('%02d',(time_remaining_seconds)) %></div></div></li>
+       		<li id = upcoming_soon><div class="row"><div class="col-md-4"></div><div class="col-md-4"><%= link_to show[0].name+" - "+show[7] , show[0] %></div> <div class="col-md-4"><%= sprintf('%02d',(time_remaining_hours)) + ":" + sprintf('%02d',(time_remaining_minutes)) + ":" + sprintf('%02d',(time_remaining_seconds)) %></div></div></div></li>
 	 <% else%>
 			<li id =current><div class="row"><div class="col-md-4">On Air:</div><div class="col-md-4"><%= link_to show[0].name+" - "+show[7] , show[0] %></div> <div class="col-md-4"><%= sprintf('%02d',(time_remaining_hours)) + ":" + sprintf('%02d',(time_remaining_minutes)) + ":" + sprintf('%02d',(time_remaining_seconds)) %></div></div></li>
 	
