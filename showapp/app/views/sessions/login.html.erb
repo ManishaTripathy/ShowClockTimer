@@ -1,5 +1,4 @@
 <% @page_title = "UserAuth | Login" -%>
-
 <% if flash[:error] %>
 	<div id="error_explanation">
      		<ul> <%= flash[:error] %> </ul>
@@ -13,6 +12,22 @@
 	<div class= "Sign_Form">
     <h1 style="margin-left:420px;">Radio Show Clock Timer</h1>
 </div>
+<%= javascript_tag do %>
+
+jQuery(document).ready(function($) {
+
+  if (window.history && window.history.pushState) {
+
+    window.history.pushState('forward', null, './');
+
+    $(window).on('popstate', function() {
+      alert('User Logged out...Please Log in to continue');
+    });
+
+  }
+});
+
+   <% end %>     
 
 <!-- Registration Form - START -->
  <div class="container" id="container1">
@@ -81,22 +96,7 @@
         </div>
 
   
-<%= javascript_tag do %>
-
-jQuery(document).ready(function($) {
-
-  if (window.history && window.history.pushState) {
-
-    window.history.pushState('forward', null, './');
-
-    $(window).on('popstate', function() {
-      alert('User Logged out...Please Log in to continue');
-    });
-
-  }
-});
-
-   <% end %>      
+ 
         
         
         <style>

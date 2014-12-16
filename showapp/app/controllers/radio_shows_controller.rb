@@ -86,6 +86,7 @@ class RadioShowsController < ApplicationController
     else
       @radio_shows_list = RadioShow.all.where("id" => params[:id], "user_id" => @current_user.id);
     end
+    render :layout => false
   end
 
 

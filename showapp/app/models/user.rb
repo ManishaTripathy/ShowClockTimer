@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates_length_of :password, :in => 6..20, :on => :create 
   def self.authenticate(username_or_email="", login_password="")
   if EMAIL_REGEX.match(username_or_email)
-    user = User.find_by_email(username_or_email)
+    user = User.find_by_emailAddress(username_or_email)
   else
     user = User.find_by_userName(username_or_email)
   end
