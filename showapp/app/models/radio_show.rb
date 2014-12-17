@@ -3,6 +3,7 @@ validate :valid_show_timing_edit, on: :update
 validate :valid_show_timing, on: :create
 validates_presence_of :name
 validates_presence_of :description
+validates :name, :uniqueness => true, on: :create
 #validate :day, on: :create or :update
 belongs_to :user
 has_many :show_timings, dependent: :destroy
@@ -62,20 +63,26 @@ def valid_show_timing_edit
 
       if (!@radio_shows_list1.empty?)
     @radio_shows_list1.each do |radio_show|
-      list = " Timings Overlap with existing show event: "+radio_show.name + " !!! "
-      errors.add( :Show, list);
+      if (name != radio_show.name)
+      	list = " Timings Overlap with existing show event: "+radio_show.name + " !!! "
+      	errors.add( :Show, list);
+      end
     end
       end
       if (!@radio_shows_list2.empty?)
     @radio_shows_list2.each do |radio_show|
+      if (name != radio_show.name)
       list = " Timings Overlap with existing show event: "+radio_show.name + " !!! "
       errors.add( :Show, list);
+      end
     end
       end
       if (!@radio_shows_list3.empty?)
     @radio_shows_list3.each do |radio_show|
+      if (name != radio_show.name)
       list = "Timings Overlap with existing show event: "+radio_show.name + " !!! "
       errors.add( :Show, list);
+    end
     end
       end
     end
