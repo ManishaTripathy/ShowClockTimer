@@ -18,8 +18,9 @@ has_many :show_timings, dependent: :destroy
   # end of any existing show is between start/end of new show
   @radio_shows_list2 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where('show_timings.day' => show_timing.day, 'show_timings.endtime' => (show_timing.starttime+1)..(show_timing.endtime) )).uniq;
   # start and end is oany existing show includes start/end of new show
-  #@radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( "show_timings.starttime <= ? and show_timings.endtime" >= ?",show_timing.starttime, show_timing.endtime)).uniq;
-  @radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( "show_timings.starttime <= ? and show_timings.endtime >= ?",show_timing.starttime, show_timing.endtime)).uniq;
+  #@radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( "show_timings.startTime <= ? and show_timings.endTime" >= ?",show_timing.startTime, show_timing.endTime)).uniq;
+  @radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( '"show_timings"."startTime" <= ? and "show_timings"."endTime" >= ?',show_timing.startTime, show_timing.endTime)).uniq;
+@radio_shows_list4 = (RadioShow.all.where("user_id" => user_id, "name" => name)).uniq;
 
       if (!@radio_shows_list1.empty?)
     @radio_shows_list1.each do |radio_show|
@@ -40,6 +41,19 @@ has_many :show_timings, dependent: :destroy
     end
       end
     end
+
+
+if (!@radio_shows_list4.empty?)
+    @radio_shows_list4.each do |radio_show|
+      if (id != radio_show.id)
+      	list = " Name Matches with existing show event: !!! "
+      	errors.add( :Show, list);
+      end
+    end
+      end
+
+
+
     show_timings.permutation(2).select{|a, b|
     if ( (b.day == a.day) && (b.starttime >= a.starttime) &&  (b.starttime <= a.endtime) )
    errors.add(:Show, " Timings Overlap in Submitted Info!!!! ");
@@ -57,8 +71,20 @@ def valid_show_timing_edit
   # end of any existing show is between start/end of new show
   @radio_shows_list2 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where('show_timings.day' => show_timing.day, 'show_timings.endtime' => (show_timing.starttime+1)..(show_timing.endtime) )).uniq;
   # start and end is oany existing show includes start/end of new show
-  #@radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( "show_timings.starttime <= ? and show_timings.endtime" >= ?",show_timing.starttime, show_timing.endtime)).uniq;
-  @radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( "show_timings.starttime <= ? and show_timings.endtime >= ?",show_timing.starttime, show_timing.endtime)).uniq;
+  #@radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( "show_timings.startTime <= ? and show_timings.endTime" >= ?",show_timing.startTime, show_timing.endTime)).uniq;
+  @radio_shows_list3 = (RadioShow.all.where("user_id" => user_id).includes(:show_timings).where( 'show_timings.day' => show_timing.day).where( '"show_timings"."startTime" <= ? and "show_timings"."endTime" >= ?',show_timing.startTime, show_timing.endTime)).uniq;
+@radio_shows_list4 = (RadioShow.all.where("user_id" => user_id, "name" => name)).uniq;
+
+if (!@radio_shows_list4.empty?)
+    @radio_shows_list4.each do |radio_show|
+      if (id != radio_show.id)
+      	list = " Name Matches with existing show event: !!! "
+      	errors.add( :Show, list);
+      end
+    end
+      end
+
+
 
       if (!@radio_shows_list1.empty?)
     @radio_shows_list1.each do |radio_show|
